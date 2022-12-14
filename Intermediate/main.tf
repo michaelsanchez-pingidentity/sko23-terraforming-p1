@@ -42,15 +42,15 @@ resource "pingone_environment" "release_environment" {
   service {
     type = "MFA"
   }
-  # service {
-  #   type = "Risk"
-  # }
+  service {
+    type = "Risk"
+  }
   # service {
   #   type = "Authorize"
   # }
-  service {
-    type = "DaVinci"
-  }
+  # service {
+  #   type = "DaVinci"
+  # }
 }
 
 # Grant Roles to Admin User
