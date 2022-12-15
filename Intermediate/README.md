@@ -1,25 +1,36 @@
 # Sources 
 
-Terraform labs based on work done against One-Facile
+Terraform labs based on Chris Price's work done for One-Facile
 > https://github.com/cprice-ping/One-Facile-Terraform/tree/dev
 
 # Learning References & More
-> [Basic CLI Features] (https://developer.hashicorp.com/terraform/cli/commands/)
+Basic CLI Features 
+> https://developer.hashicorp.com/terraform/cli/commands/
 
-> [HCL (Hashicorp Configuration Language)] (https://developer.hashicorp.com/terraform/tutorials/configuration-language)
+HCL (Hashicorp Configuration Language) 
+> https://developer.hashicorp.com/terraform/tutorials/configuration-language
 
-> [Terraforming Applications] (https://developer.hashicorp.com/terraform/tutorials/applications)
+Recommended Terraform Patterns
+> https://developer.hashicorp.com/terraform/tutorials/recommended-patterns
 
-> [Terraforming AWS] (https://developer.hashicorp.com/terraform/tutorials/aws)
+Terraforming Applications 
+> https://developer.hashicorp.com/terraform/tutorials/applications
 
-> [Terraforming Azure] (https://developer.hashicorp.com/terraform/tutorials/azure)
+Terraforming AWS 
+> https://developer.hashicorp.com/terraform/tutorials/aws
 
-> [Terraforming k8s] (https://developer.hashicorp.com/terraform/tutorials/azure)
+Terraforming Azure 
+> https://developer.hashicorp.com/terraform/tutorials/azure
 
-> [Recommended Terraform Patterns] (https://developer.hashicorp.com/terraform/tutorials/recommended-patterns)
+Terraforming k8s 
+> https://developer.hashicorp.com/terraform/tutorials/azure
 
-> [ All Terraform Tutorials] (https://developer.hashicorp.com/terraform/tutorials)
 
-> [Terraform Developer Site] (https://developer.hashicorp.com/terraform)
+All Terraform Tutorials 
+> https://developer.hashicorp.com/terraform/tutorials
 
-> [Terraform Certifications] (https://developer.hashicorp.com/terraform/tutorials/certification)
+Terraform Developer Site 
+> https://developer.hashicorp.com/terraform
+
+Terraform Certifications 
+> https://developer.hashicorp.com/terraform/tutorials/certification

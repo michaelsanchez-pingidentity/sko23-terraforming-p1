@@ -14,7 +14,7 @@ Check whether your configuration is valid.
 
     terraform validate
 
-**Optional** Show output values from your root module.
+**Optional** After state file is created, show output values from your root module.
 
     terraform output
 
@@ -28,11 +28,11 @@ Create or update infrastructure. It performs a plan just like terraform plan doe
 
 Passing vars into terraform plan
 
-    terraform plan -var="admin_env_id=98fcf1dd-b4f9-4bd8-acdf-7292efc3112a" -var="admin_user_id=71bb94f5-89a8-4cad-a506-df5e7ad811ea" -var="env_name=SKO23 TF Dev" -var="org_id=0f2ff549-eaba-4515-b278-45097d8bb913" -var="region=NorthAmerica" -var="worker_id=b6e3bbcb-fa9c-4808-a420-243f1641557f" -var="worker_secret=PtcUC2~skzkvarbD2dP-o40U0mViTL7LER9O3UdvTzT5-yWQGRxISmOj_tixWio3" -out=skotfplan
+    terraform plan -var="admin_env_id=98fcf1dd-b4f9-4bd8-acdf-7292efc3112a" -var="admin_user_id=71bb94f5-89a8-4cad-a506-df5e7ad811ea" -var="env_name=SKO 23 Lab Test0" -var="org_id=0f2ff549-eaba-4515-b278-45097d8bb913" -var="region=NorthAmerica" -var="worker_id=b6e3bbcb-fa9c-4808-a420-243f1641557f" -var="worker_secret=PtcUC2~skzkvarbD2dP-o40U0mViTL7LER9O3UdvTzT5-yWQGRxISmOj_tixWio3" -out=skotfplan
 
 Passing vars into terraform apply
 
-    terraform apply -var="admin_env_id=98fcf1dd-b4f9-4bd8-acdf-7292efc3112a" -var="admin_user_id=71bb94f5-89a8-4cad-a506-df5e7ad811ea" -var="env_name=SKO23 TF Dev" -var="org_id=0f2ff549-eaba-4515-b278-45097d8bb913" -var="region=NorthAmerica" -var="worker_id=b6e3bbcb-fa9c-4808-a420-243f1641557f" -var="worker_secret=PtcUC2~skzkvarbD2dP-o40U0mViTL7LER9O3UdvTzT5-yWQGRxISmOj_tixWio3"
+    terraform apply -var="admin_env_id=98fcf1dd-b4f9-4bd8-acdf-7292efc3112a" -var="admin_user_id=71bb94f5-89a8-4cad-a506-df5e7ad811ea" -var="env_name=SKO 23 Lab Test0" -var="org_id=0f2ff549-eaba-4515-b278-45097d8bb913" -var="region=NorthAmerica" -var="worker_id=b6e3bbcb-fa9c-4808-a420-243f1641557f" -var="worker_secret=PtcUC2~skzkvarbD2dP-o40U0mViTL7LER9O3UdvTzT5-yWQGRxISmOj_tixWio3"
 
 Destroy previously-created infrastructure. While you typically don't want to destroy long-lived objects in a production environment, Terraform is sometimes used to manage ephemeral infrastructure for development or testing purposes, in which case you can use terraform destroy to conveniently clean up all of those temporary objects once you are finished with your work.
 
