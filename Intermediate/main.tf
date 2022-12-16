@@ -32,7 +32,7 @@ data "pingone_licenses" "internal_license" {
 resource "pingone_environment" "release_environment" {
   name        = var.env_name
   description = "Created by Terraform"
-  type        = "PRODUCTION"
+  type        = "SANDBOX"
   license_id  = data.pingone_licenses.internal_license.ids[0]
 
   default_population {}
@@ -45,12 +45,12 @@ resource "pingone_environment" "release_environment" {
   service {
     type = "Risk"
   }
-  # service {
-  #   type = "Authorize"
-  # }
-  # service {
-  #   type = "DaVinci"
-  # }
+  service {
+    type = "Authorize"
+  }
+  service {
+    type = "DaVinci"
+  }
 }
 
 # Grant Roles to Admin User
@@ -177,17 +177,17 @@ resource "pingone_application_resource_grant" "pingone_scopes" {
 }
 
 # Add SAML Application
-resource "pingone_application" "saml_login_app" {
-  environment_id = pingone_environment.release_environment.id
-  name           = "SAML Login"
-  enabled        = true
+# resource "pingone_application" "saml_login_app" {
+#   environment_id = pingone_environment.release_environment.id
+#   name           = "SAML Login"
+#   enabled        = true
 
-  saml_options {
-    acs_urls           = ["https://decoder.pingidentity.cloud"]
-    assertion_duration = 3600
-    sp_entity_id       = "urn:facile:saml"
-  }
-}
+#   saml_options {
+#     acs_urls           = ["https://decoder.pingidentity.cloud"]
+#     assertion_duration = 3600
+#     sp_entity_id       = "urn:facile:saml"
+#   }
+# }
 
 # Add Sample User to Default Population
 resource "pingone_user" "one_facile_user" {

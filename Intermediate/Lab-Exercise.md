@@ -4,15 +4,16 @@ Just planning notes. Move this to the Slides presentation.
 
 1. Flog anyone not prepared with pre-reqs.
 1. Clone lab project.
-1. Explain `terraform init` and initialize the project directory.
-1. Demo and run the format command. *Readability, consistency*.
-1. Explain `terraform validate` and run it.
+1. Explain `terraform init` and initialize the project directory. *The .terraform directory is a hidden directory which is used by Terraform to cache provider plugins and remove modules dependencies referenced by the Terraform project code.*
+1. Show the outputs.tf file and run the `terraform fmt` command. *Readability, consistency*.
+1. Explain `terraform validate` and run it. *Find issues in advance.* 
+    - In vars.tf, rename `locals` to `localsx` and validate again.
 1. Terraform a new PingOne environment in your tenant.
     - *P1Risk and Authorize services are commented out.*
     - Run `terraform plan -out=skotfplan`. Copy and paste values when prompted. A plan file is saved.
     -- Talk about no stipulation of file names. Builds dependency graph.
-    - Run `terraform output` as example. (*TF state file required for this*.)
     - Run `terraform apply skotfplan`. If you didn't pass in the plan file, Terraform would ask for the var values again to see if state is changing. (`terraform apply` runs an execution plan again to avoid unnecessary runs or pick up changes by comparing state to .tf files).
+    - Run `terraform output` as example. (*TF state file required for this*.)
     - Creates a new environment.
     - Reload your P1 admin console.
 1. Change the Terraform files to modify your new PingOne environment.
@@ -24,8 +25,8 @@ Just planning notes. Move this to the Slides presentation.
     - Updates your new environment.
     - Reload your P1 admin console.
 1. Destroy all the things.
-    - `terraform plan [vars -out=destroyPlan] -destroy`
-    - `terraform destroy skotfplan`
+    - `terraform plan -var="admin_env_id=98fcf1dd-b4f9-4bd8-acdf-7292efc3112a" -var="admin_user_id=71bb94f5-89a8-4cad-a506-df5e7ad811ea" -var="env_name=SKO 23 Lab Test0" -var="org_id=0f2ff549-eaba-4515-b278-45097d8bb913" -var="region=NorthAmerica" -var="worker_id=b6e3bbcb-fa9c-4808-a420-243f1641557f" -var="worker_secret=PtcUC2~skzkvarbD2dP-o40U0mViTL7LER9O3UdvTzT5-yWQGRxISmOj_tixWio3" -destroy -out=destroyPlan`
+    - `terraform apply destroyPlan0`
 1. Using tfvars to abstract your sensitive data.
     - Talk about setting defaults in vars.tf but concern about sensitive data
     - Create terraform.tfvars
