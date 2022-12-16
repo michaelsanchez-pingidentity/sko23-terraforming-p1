@@ -29,12 +29,13 @@ Just planning notes. Move this to the Slides presentation.
     - `terraform apply destroyPlan0`
 1. Using tfvars to abstract your sensitive data.
     - Talk about setting defaults in vars.tf but concern about sensitive data
-    - Create terraform.tfvars
-    - Add name value pairs used in previous exercises. (Names much mactch what is in vars.tf).
-    - run stuff.
+    - Create .tfvars file. `touch terraform.tfvars`
+    - Add name value pairs for worker app and secret used in previous exercises. *Names much match what is in vars.tf. Can't declare new vars, only provide values*.
+    - Run `terraform plan -var="varName=varValue" [-var="varName=varValue" ...] -out=skotfvarsplan` to update the plan file.
+    - Run `terraform apply skotfvarsplan`.
     - Updates your new environment again.
     - Reload your P1 admin console.
-1. Tear it all down. 
-(*Do we do this earlier and then recreate so they have an environment for the advanced sessions? Or move the tear down to the advanced session?*)
+    - This won't scale for multiple environments, like dev, test, stage, prod. But you can create environment specific files, named as needed; dev.tfvars, prod.tfvars and you can pass the file name in at runtime, making it easy to manage in a pipeline.
+1. Don't edit or delete your project files if you are attending the advanced session next. We continue from here.
 1. Q&A.
 1. Point out reference links and where slides will be available.

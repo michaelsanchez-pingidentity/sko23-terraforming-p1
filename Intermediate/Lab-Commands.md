@@ -14,10 +14,6 @@ Check whether your configuration is valid.
 
     terraform validate
 
-**Optional** After state file is created, show output values from your root module.
-
-    terraform output
-
 Show changes required by the current configuration and save it to a plan file. It evaluates a Terraform configuration to determine the desired state of all the resources it declares, then compares that desired state to the real infrastructure objects being managed with the current working directory and workspace.
 
     terraform plan -out=tfplan
@@ -25,6 +21,10 @@ Show changes required by the current configuration and save it to a plan file. I
 Create or update infrastructure. It performs a plan just like terraform plan does, but then actually carries out the planned changes to each resource using the relevant infrastructure Terraform provider's API
 
     terraform apply tfplan
+
+**Optional** After state file is created, show output values from your root module.
+
+    terraform output
 
 Passing vars into terraform plan
 
@@ -34,12 +34,26 @@ Passing vars into terraform apply
 
     terraform apply -var="admin_env_id=98fcf1dd-b4f9-4bd8-acdf-7292efc3112a" -var="admin_user_id=71bb94f5-89a8-4cad-a506-df5e7ad811ea" -var="env_name=SKO 23 Lab Test0" -var="org_id=0f2ff549-eaba-4515-b278-45097d8bb913" -var="region=NorthAmerica" -var="worker_id=b6e3bbcb-fa9c-4808-a420-243f1641557f" -var="worker_secret=PtcUC2~skzkvarbD2dP-o40U0mViTL7LER9O3UdvTzT5-yWQGRxISmOj_tixWio3"
 
-Destroy previously-created infrastructure. While you typically don't want to destroy long-lived objects in a production environment, Terraform is sometimes used to manage ephemeral infrastructure for development or testing purposes, in which case you can use terraform destroy to conveniently clean up all of those temporary objects once you are finished with your work.
+Destroy previously created infrastructure. *While you typically don't want to destroy long-lived objects in a production environment, Terraform is sometimes used to manage ephemeral infrastructure for development or testing purposes, in which case you can use terraform destroy to conveniently clean up all of those temporary objects once you are finished with your work.*
 
-    terraform destroy
+Plan the destroy
 
-*Alias: terraform apply -destroy*
+    terraform plan -var="admin_env_id=98fcf1dd-b4f9-4bd8-acdf-7292efc3112a" -var="admin_user_id=71bb94f5-89a8-4cad-a506-df5e7ad811ea" -var="env_name=SKO 23 Lab Test0" -var="org_id=0f2ff549-eaba-4515-b278-45097d8bb913" -var="region=NorthAmerica" -var="worker_id=b6e3bbcb-fa9c-4808-a420-243f1641557f" -var="worker_secret=PtcUC2~skzkvarbD2dP-o40U0mViTL7LER9O3UdvTzT5-yWQGRxISmOj_tixWio3" -destroy -out=destroyPlan
 
+Destroy all the thingz
 
+    terraform apply destroyPlan
+
+Using tfvars file
+
+    touch terraform.tfvars
+
+Create a new plan using tfvars
+
+    terraform plan -var="varName=varValue" [-var="varName=varValue" ...] -out=skotfvarsplan
+
+Apply it
+
+    terraform apply skotfvarsplan
 
 
