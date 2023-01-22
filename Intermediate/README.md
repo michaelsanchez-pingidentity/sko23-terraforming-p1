@@ -1,11 +1,21 @@
-# Sources 
+# Lab Sources 
 
 Terraform labs based on Chris Price's work done for One-Facile
+*This repo is for Facile, not the SKO Terraform labs.* 
 > https://github.com/cprice-ping/One-Facile-Terraform/tree/dev
 
-# Learning References & More
+# Security Resources
+## State of Open Source Terraform Security Report (2020)
+> https://bridgecrew.io/wp-content/uploads/state-of-open-source-terraform-security-2020.pdf
+
+## Policy-as-code
+>https://www.checkov.io/
+# Learning & Documentation Resources
 Basic CLI Features 
 > https://developer.hashicorp.com/terraform/cli/commands/
+
+HCL Syntax
+> https://developer.hashicorp.com/packer/docs/templates/hcl_templates/syntax
 
 HCL (Hashicorp Configuration Language) 
 > https://developer.hashicorp.com/terraform/tutorials/configuration-language

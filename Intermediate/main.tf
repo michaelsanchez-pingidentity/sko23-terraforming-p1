@@ -8,11 +8,11 @@ terraform {
 }
 
 provider "pingone" {
-  client_id                    = var.worker_id
-  client_secret                = var.worker_secret
-  environment_id               = var.admin_env_id
-  region                       = var.region
-  force_delete_production_type = false
+  client_id=var.worker_id
+  client_secret=var.worker_secret
+  environment_id=var.admin_env_id
+  region=var.region
+  force_delete_production_type=false
 }
 
 data "pingone_licenses" "internal_license" {
@@ -42,12 +42,12 @@ resource "pingone_environment" "release_environment" {
   service {
     type = "MFA"
   }
-  service {
-    type = "Risk"
-  }
-  service {
-    type = "Authorize"
-  }
+  # service {
+  #   type = "Risk"
+  # }
+  # service {
+  #   type = "Authorize"
+  # }
   service {
     type = "DaVinci"
   }
@@ -177,17 +177,17 @@ resource "pingone_application_resource_grant" "pingone_scopes" {
 }
 
 # Add SAML Application
-# resource "pingone_application" "saml_login_app" {
-#   environment_id = pingone_environment.release_environment.id
-#   name           = "SAML Login"
-#   enabled        = true
+resource "pingone_application" "saml_login_app" {
+  environment_id = pingone_environment.release_environment.id
+  name           = "SAML Login"
+  enabled        = true
 
-#   saml_options {
-#     acs_urls           = ["https://decoder.pingidentity.cloud"]
-#     assertion_duration = 3600
-#     sp_entity_id       = "urn:facile:saml"
-#   }
-# }
+  saml_options {
+    acs_urls           = ["https://decoder.pingidentity.cloud"]
+    assertion_duration = 3600
+    sp_entity_id       = "urn:facile:saml"
+  }
+}
 
 # Add Sample User to Default Population
 resource "pingone_user" "one_facile_user" {
