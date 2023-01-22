@@ -1,52 +1,46 @@
-# One-Facile-Terraform
+# Lab Sources 
 
-Rework of One-Facile with Terrafom
+Terraform labs based on Chris Price's work done for One-Facile
+*This repo is for Facile, not the SKO Terraform labs.* 
+> https://github.com/cprice-ping/One-Facile-Terraform/tree/dev
 
-## Terraform Config
+# Security Resources
+## State of Open Source Terraform Security Report (2020)
+> https://bridgecrew.io/wp-content/uploads/state-of-open-source-terraform-security-2020.pdf
 
-This repo contains a set of HCL that builds out a set of [PingOne](https://www.pingidentity.com/en/try-ping.html) components to provide Identity services into an application.
+## Policy-as-code
+>https://www.checkov.io/
+# Learning & Documentation Resources
+Basic CLI Features 
+> https://developer.hashicorp.com/terraform/cli/commands/
 
-The HCL configures the following:
+HCL Syntax
+> https://developer.hashicorp.com/packer/docs/templates/hcl_templates/syntax
 
-* PingOne Environment
-* PingOne SSO
-  * Administrator Roles
-    * ID Admin
-    * Client Dev
-  * Sign-On-Policies
-    * Single_Factor (DV)
-    * Multi-Step (DV)
-  * PingOne Application (OIDC)
-    * OIDC Scopes ( `openid` | `email` | `profile` )
-    * P1 API Scopes ( `p1:read:user` | `p1:update:user` | `p1:read:sessions` | `p1:delete:sessions` )
-  * PingOne Application (SAML)
-  * Sample User
-    * `facileuser1@yourdomain.com`
+HCL (Hashicorp Configuration Language) 
+> https://developer.hashicorp.com/terraform/tutorials/configuration-language
 
-## Variables
+Recommended Terraform Patterns
+> https://developer.hashicorp.com/terraform/tutorials/recommended-patterns
 
-| Name | Description |
-| --- | --- |
-| `region` | PingOne Region ( NorthAmerica | Europe | Asia ) |
-| `org_id` | PingOne Organization Id (located on Environment -> Properties)
-| `admin_env_id` | PingOne Environment where Administration is managed |
-| `admin_user_id` | PingOne Admin User (User -> API) |
-| `worker_id` | PingOne Worker App (must have roles to create Environments \ Users \ Applications)
-| `worker_secret` | PingOne Worker App secret |
-| `env_name` | Name of the PingOne Environment to create |
+Terraforming Applications 
+> https://developer.hashicorp.com/terraform/tutorials/applications
 
-## To Do
+Terraforming AWS 
+> https://developer.hashicorp.com/terraform/tutorials/aws
 
-Things not yet placed into the config:
+Terraforming Azure 
+> https://developer.hashicorp.com/terraform/tutorials/azure
 
-* PingOne MFA Policy
-  * Method - SMS
-  * Method - EMail
+Terraforming k8s 
+> https://developer.hashicorp.com/terraform/tutorials/azure
 
-* PingOne SSO
-  * Agreement
 
-* DaVinci
-  * Registration & SignOn
-  * Progressive Profiling
-  * Adaptive SignOn \ Passwordless
+All Terraform Tutorials 
+> https://developer.hashicorp.com/terraform/tutorials
+
+Terraform Developer Site 
+> https://developer.hashicorp.com/terraform
+
+Terraform Certifications 
+> https://developer.hashicorp.com/terraform/tutorials/certification
