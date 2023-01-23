@@ -15,10 +15,6 @@ To check whether your configuration is valid, a sanity check can be run to verif
 
     terraform validate
 
-**Optional** Show output values from your root module. You can see this configuration in the outputs.tf file.
-
-    terraform output
-
 Terraform can show a dry-run of the changes required by the current configuration and save it to a plan file. It evaluates a Terraform configuration to determine the desired state of all the resources it declares, then compares that desired state to the real infrastructure objects being managed with the current working directory and workspace.
 
 Prompting for var values.
@@ -28,6 +24,10 @@ Prompting for var values.
 To commit, create or update infrastructure Terraform has the apply command. It performs a plan just like terraform plan does, but then actually carries out the planned changes to each resource using the relevant infrastructure Terraform provider’s API.
 
     terraform apply tfplan
+
+**Optional** Show output values from your root module. You can see this configuration in the outputs.tf file.
+
+    terraform output
 
 
  This time comment out the SAML app configs and UNcomment the P1AZ configs so we can change the state of our infrastructure. Then run the plan command this time passing in the var values as parameters to the command.
