@@ -1,8 +1,6 @@
 # Lab Sources 
 
 Terraform labs based on Chris Price's work done for One-Facile
-*This repo is for Facile, not the SKO Terraform labs.* 
-> https://github.com/cprice-ping/One-Facile-Terraform/tree/dev
 
 # Security Resources
 ## State of Open Source Terraform Security Report (2020)
